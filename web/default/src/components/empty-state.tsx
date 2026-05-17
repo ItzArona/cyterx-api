@@ -53,7 +53,10 @@ export function EmptyState(props: EmptyStateProps) {
         )}
       >
         <EmptyHeader>
-          <EmptyMedia variant='icon'>
+          <EmptyMedia
+            variant='icon'
+            className='size-12 rounded-full bg-[color-mix(in_oklch,var(--accent-blue)_12%,transparent)] text-[var(--accent-blue)] ring-1 ring-[color-mix(in_oklch,var(--accent-blue)_30%,transparent)] [&_svg:not([class*=size-])]:size-5'
+          >
             <Icon className='size-6' />
           </EmptyMedia>
           <EmptyTitle>{props.title ?? t('No Data')}</EmptyTitle>

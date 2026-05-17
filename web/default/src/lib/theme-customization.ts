@@ -30,6 +30,11 @@ export const THEME_PRESETS = [
     swatches: ['oklch(0.13 0 0)', 'oklch(0.95 0 0)'],
   },
   {
+    value: 'milky-hub',
+    name: 'Milky Hub',
+    swatches: ['oklch(0.62 0.18 250)', 'oklch(0.78 0.1 215)'],
+  },
+  {
     value: 'underground',
     name: 'Underground',
     swatches: ['oklch(0.5315 0.0694 156.19)', 'oklch(0.5748 0.0862 336.52)'],
@@ -79,7 +84,7 @@ export type ThemeCustomization = {
 }
 
 export const DEFAULT_THEME_CUSTOMIZATION: ThemeCustomization = {
-  preset: 'default',
+  preset: 'milky-hub',
   radius: 'default',
   scale: 'default',
   contentLayout: 'full',

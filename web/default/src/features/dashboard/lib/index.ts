@@ -35,3 +35,14 @@ export {
 export { processChartData, processUserChartData } from './charts'
 export { safeDivide, calculateDashboardStats } from './stats'
 export { getPreviewText } from './text'
+export {
+  buildCurlCommand,
+  buildPythonSnippet,
+  buildJavaScriptSnippet,
+  buildGoSnippet,
+  buildCodeSample,
+  formatDisplayKey,
+  normalizeChatCompletionsEndpoint,
+  type CodeSampleArgs,
+  type CodeSampleLanguage,
+} from './code-samples'

@@ -225,7 +225,7 @@ export function Dashboard() {
     ) : null
 
   return (
-    <SectionPageLayout>
+    <SectionPageLayout showHeader={activeSection !== 'overview'}>
       <SectionPageLayout.Title>{t(meta.titleKey)}</SectionPageLayout.Title>
       <SectionPageLayout.Description>
         {t(meta.descriptionKey)}

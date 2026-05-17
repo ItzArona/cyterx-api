@@ -1,21 +1,3 @@
-/*
-Copyright (C) 2023-2026 QuantumNous
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/>.
-
-For commercial licensing, please contact support@quantumnous.com
-*/
 import { Link } from '@tanstack/react-router'
 import { ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -31,45 +13,66 @@ export function Hero(props: HeroProps) {
   const { t } = useTranslation()
 
   return (
-    <section className='relative z-10 flex flex-col items-center overflow-hidden px-6 pt-28 pb-16 md:pt-36 md:pb-24'>
-      {/* Radial gradient background */}
+    <section className='relative z-10 flex flex-col items-center px-6 pt-28 pb-16 md:pt-36 md:pb-24'>
+      {/* Central radial glow — lifts the card area without darkening the rest */}
       <div
         aria-hidden
-        className='pointer-events-none absolute inset-0 -z-10 opacity-25 dark:opacity-[0.12]'
+        className='pointer-events-none absolute inset-0 -z-10'
         style={{
-          background: [
-            'radial-gradient(ellipse 60% 50% at 20% 20%, oklch(0.72 0.18 250 / 80%) 0%, transparent 70%)',
-            'radial-gradient(ellipse 50% 40% at 80% 15%, oklch(0.65 0.15 200 / 60%) 0%, transparent 70%)',
-            'radial-gradient(ellipse 40% 35% at 40% 80%, oklch(0.70 0.12 280 / 40%) 0%, transparent 70%)',
-          ].join(', '),
+          background:
+            'radial-gradient(ellipse 60% 50% at 50% 38%, oklch(0.97 0.02 250 / 22%) 0%, transparent 70%)',
         }}
       />
-      {/* Grid pattern */}
+
+      {/* Subtle grid pattern */}
       <div
         aria-hidden
-        className='absolute inset-0 -z-10 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_30%,black_20%,transparent_100%)] bg-[size:4rem_4rem] opacity-[0.08]'
+        className='absolute inset-0 -z-10 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_30%,black_20%,transparent_100%)] bg-[size:4rem_4rem] opacity-[0.05]'
       />
 
-      <div className='flex max-w-3xl flex-col items-center text-center'>
+      {/* Glass focus card */}
+      <div
+        className={[
+          'landing-animate-fade-up relative w-full max-w-2xl',
+          'rounded-3xl border border-white/25 dark:border-white/10',
+          'bg-background/45 dark:bg-background/30',
+          'shadow-[0_8px_40px_rgb(0_0_0/0.18)]',
+          'px-8 py-10 md:px-12 md:py-14',
+          'flex flex-col items-center text-center',
+          'backdrop-blur-xl',
+        ].join(' ')}
+        style={{ animationDelay: '0ms' }}
+      >
+        <img
+          src='/mainsite.png'
+          alt='Milky API Hub'
+          width={240}
+          height={80}
+          className='landing-animate-fade-up h-16 w-auto opacity-0 md:h-20'
+          style={{ animationDelay: '40ms' }}
+        />
+
         <h1
-          className='landing-animate-fade-up text-[clamp(2rem,5.5vw,3.5rem)] leading-[1.15] font-bold tracking-tight'
-          style={{ animationDelay: '0ms' }}
+          className='landing-animate-fade-up mt-5 text-[clamp(1.75rem,4.5vw,2.75rem)] leading-[1.15] font-bold tracking-tight opacity-0'
+          style={{ animationDelay: '120ms' }}
         >
-          {t('Unified API Gateway for')}
-          <br />
           <span className='bg-gradient-to-r from-blue-400 via-violet-400 to-purple-500 bg-clip-text text-transparent'>
-            {t('All Your AI Models')}
+            {t('Milky API Hub')}
           </span>
         </h1>
+
         <p
-          className='landing-animate-fade-up text-muted-foreground/80 mt-5 max-w-lg text-base leading-relaxed opacity-0 md:text-lg'
-          style={{ animationDelay: '80ms' }}
+          className='landing-animate-fade-up text-foreground/85 mt-4 max-w-md text-base leading-relaxed opacity-0 md:text-lg'
+          style={{ animationDelay: '200ms' }}
         >
-          {t('Power AI applications, manage digital assets, connect the Future')}
+          {t(
+            'Power AI applications, manage digital assets, connect the Future'
+          )}
         </p>
+
         <div
-          className='landing-animate-fade-up mt-8 flex items-center gap-3 opacity-0'
-          style={{ animationDelay: '160ms' }}
+          className='landing-animate-fade-up mt-7 flex items-center gap-3 opacity-0'
+          style={{ animationDelay: '280ms' }}
         >
           {props.isAuthenticated ? (
             <Button
@@ -90,7 +93,7 @@ export function Hero(props: HeroProps) {
               </Button>
               <Button
                 variant='outline'
-                className='border-border/50 hover:border-border hover:bg-muted/50 rounded-lg'
+                className='border-border/50 hover:border-border bg-background/60 hover:bg-background/80 rounded-lg backdrop-blur-md'
                 render={<Link to='/pricing' />}
               >
                 {t('View Pricing')}
@@ -101,8 +104,8 @@ export function Hero(props: HeroProps) {
       </div>
 
       <div
-        className='landing-animate-fade-up w-full opacity-0'
-        style={{ animationDelay: '300ms' }}
+        className='landing-animate-fade-up relative mt-12 w-full opacity-0'
+        style={{ animationDelay: '380ms' }}
       >
         <HeroTerminalDemo />
       </div>
