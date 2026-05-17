@@ -68,6 +68,15 @@ For commercial licensing, please contact support@quantumnous.com
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-hero-from: var(--hero-gradient-from);
+  --color-hero-via: var(--hero-gradient-via);
+  --color-hero-to: var(--hero-gradient-to);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --color-surface-elevated: var(--surface-elevated);
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -122,6 +131,19 @@ For commercial licensing, please contact support@quantumnous.com
   --sidebar-ring: oklch(0.708 0 0);
   --skeleton-base: oklch(0.97 0 0);
   --skeleton-highlight: oklch(0.985 0 0);
+
+  /* Milky Hub additions */
+  --hero-gradient-from: oklch(0.97 0.04 245);
+  --hero-gradient-via: oklch(0.95 0.06 280);
+  --hero-gradient-to: oklch(0.98 0.02 220);
+  --accent-blue: oklch(0.62 0.18 250);
+  --accent-cyan: oklch(0.78 0.1 215);
+  --glass-bg: oklch(1 0 0 / 0.55);
+  --glass-border: oklch(1 0 0 / 0.4);
+  --surface-elevated: oklch(0.99 0.01 250);
+  --ring-glow: oklch(0.62 0.18 250 / 0.35);
+  --shadow-soft:
+    0 1px 2px oklch(0 0 0 / 0.04), 0 8px 24px oklch(0.62 0.18 250 / 0.08);
 }
 
 .dark {
@@ -168,4 +190,17 @@ For commercial licensing, please contact support@quantumnous.com
   --sidebar-ring: oklch(0.68 0 0);
   --skeleton-base: oklch(0.285 0 0);
   --skeleton-highlight: oklch(0.39 0 0);
+
+  /* Milky Hub additions */
+  --hero-gradient-from: oklch(0.3 0.08 250);
+  --hero-gradient-via: oklch(0.25 0.06 270);
+  --hero-gradient-to: oklch(0.22 0.04 230);
+  --accent-blue: oklch(0.72 0.18 250);
+  --accent-cyan: oklch(0.82 0.12 215);
+  --glass-bg: oklch(0.2 0 0 / 0.55);
+  --glass-border: oklch(1 0 0 / 0.1);
+  --surface-elevated: oklch(0.22 0.02 260);
+  --ring-glow: oklch(0.72 0.18 250 / 0.35);
+  --shadow-soft:
+    0 1px 2px oklch(0 0 0 / 0.2), 0 8px 24px oklch(0.72 0.18 250 / 0.15);
 }

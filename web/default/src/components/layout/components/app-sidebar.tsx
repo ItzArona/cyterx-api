@@ -24,9 +24,20 @@ import { ROLE } from '@/lib/roles'
 import { useLayout } from '@/context/layout-provider'
 import { useSidebarConfig } from '@/hooks/use-sidebar-config'
 import { useSidebarData } from '@/hooks/use-sidebar-data'
-import { Sidebar, SidebarContent, SidebarRail } from '@/components/ui/sidebar'
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarRail,
+} from '@/components/ui/sidebar'
 import { getNavGroupsForPath } from '../lib/workspace-registry'
 import { NavGroup } from './nav-group'
+import {
+  BalanceCard,
+  CurrentEnvCard,
+  InviteFriendCard,
+  SidebarVersionFooter,
+} from './sidebar-cards'
 
 /**
  * Application sidebar component
@@ -69,6 +80,12 @@ export function AppSidebar() {
           return <NavGroup key={key} {...props} />
         })}
       </SidebarContent>
+      <SidebarFooter className='gap-2 px-2 pb-2 pt-1'>
+        <CurrentEnvCard />
+        <BalanceCard />
+        <InviteFriendCard />
+        <SidebarVersionFooter />
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )

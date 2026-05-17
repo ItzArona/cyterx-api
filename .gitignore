@@ -35,3 +35,8 @@ data/
 .test
 token_estimator_test.go
 skills-lock.json
+
+# Local-only files (not part of the project)
+/05_logo_icon_true_alpha.png
+/素材/
+/web/package.json

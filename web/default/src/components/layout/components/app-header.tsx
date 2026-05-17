@@ -24,6 +24,7 @@ import { NotificationButton } from '@/components/notification-button'
 import { NotificationDialog } from '@/components/notification-dialog'
 import { ProfileDropdown } from '@/components/profile-dropdown'
 import { Search } from '@/components/search'
+import { ThemeSwitch } from '@/components/theme-switch'
 import { defaultTopNavLinks } from '../config/top-nav.config'
 import { type TopNavLink } from '../types'
 import { Header } from './header'
@@ -133,6 +134,7 @@ export function AppHeader({
                 onClick={() => notifications.openDialog()}
               />
             )}
+            <ThemeSwitch />
             <LanguageSwitcher />
             {showConfigDrawer && <ConfigDrawer />}
             {showProfileDropdown && <ProfileDropdown />}

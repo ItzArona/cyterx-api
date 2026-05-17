@@ -30,11 +30,19 @@ type PublicLayoutProps = {
   showNotifications?: boolean
   logo?: React.ReactNode
   siteName?: string
+  /** When true the outer wrapper renders without a background color so a page-level fixed background (e.g. a video) shows through. */
+  transparentBackground?: boolean
 }
 
 export function PublicLayout(props: PublicLayoutProps) {
   return (
-    <div className='bg-background text-foreground relative min-h-svh overflow-x-clip'>
+    <div
+      className={
+        (props.transparentBackground
+          ? 'text-foreground relative min-h-svh overflow-x-clip'
+          : 'bg-background text-foreground relative min-h-svh overflow-x-clip')
+      }
+    >
       <PublicHeader
         navContent={props.navContent}
         navLinks={props.navLinks}

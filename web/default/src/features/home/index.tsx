@@ -16,6 +16,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 For commercial licensing, please contact support@quantumnous.com
 */
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAuthStore } from '@/stores/auth-store'
 import { Markdown } from '@/components/ui/markdown'
@@ -29,6 +30,16 @@ export function Home() {
   const { auth } = useAuthStore()
   const isAuthenticated = !!auth.user
   const { content, isLoaded, isUrl } = useHomePageContent()
+  const [reduceMotion, setReduceMotion] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setReduceMotion(mq.matches)
+    update()
+    mq.addEventListener?.('change', update)
+    return () => mq.removeEventListener?.('change', update)
+  }, [])
 
   if (!isLoaded) {
     return (
@@ -61,7 +72,33 @@ export function Home() {
   }
 
   return (
-    <PublicLayout showMainContainer={false}>
+    <PublicLayout showMainContainer={false} transparentBackground>
+      {/* Page-level fixed background — visible behind every section below */}
+      {!reduceMotion ? (
+        <video
+          aria-hidden
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload='metadata'
+          poster='/mainsite.png'
+          src='/background.mp4'
+          className='fixed inset-0 -z-30 size-full object-cover'
+        />
+      ) : (
+        <div
+          aria-hidden
+          className='fixed inset-0 -z-30 size-full bg-cover bg-center opacity-40'
+          style={{ backgroundImage: 'url(/mainsite.png)' }}
+        />
+      )}
+      {/* Page-level dim — keeps text legible regardless of which section the user scrolled to */}
+      <div
+        aria-hidden
+        className='pointer-events-none fixed inset-0 -z-20 bg-black/25 dark:bg-black/45'
+      />
+
       <Hero isAuthenticated={isAuthenticated} />
       <Stats />
       <Features />
@@ -71,3 +108,4 @@ export function Home() {
     </PublicLayout>
   )
 }
+
