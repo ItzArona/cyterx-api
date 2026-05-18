@@ -1,0 +1,134 @@
+./components/models/consumption-distribution-chart
+./components/models/log-stat-cards
+./components/models/model-charts
+./components/models/performance-overview
+./components/users/user-charts
+3 steps, just a few minutes
+@visactor/vchart
+API Info
+Additional Information
+Admin Only
+Announcement Details
+Announcements
+Answers for common access and billing questions
+Apply Filters
+Available Balance
+Average RPM
+Average TPM
+Average latency
+Balance depleted
+Brand mascot
+Call Count Distribution
+Call Count Ranking
+Call Trend
+Chart Settings
+Click for details
+Code Samples
+Configured routes and latency checks
+Consumed in the last 24 hours
+Content
+Copied!
+Copy
+Copy URL
+Copy code
+Create API Key
+Credit remaining
+Custom Time Range
+Dashboard Preferences
+Dashboard hero
+Default consumption chart
+Default model call chart
+Default range
+Default time granularity
+Detailed metrics, uptime, announcements and FAQs
+End Time
+External Speed Test
+FAQ
+Filter
+Filter Dashboard Models
+Filter by username
+Gateway
+Go
+Grouped monitor status from Uptime Kuma
+High availability & auto retry
+Historical Usage
+Last 24h usage
+Latest platform updates and notices
+Less than 1 day left
+Live
+Model Call Analytics
+Model Providers
+Monitor balance, usage, and request volume
+More models
+N/A
+No API routes configured
+No FAQ entries available
+No announcements at this time
+No data available
+No performance data available
+No recent usage
+No uptime monitoring configured
+One-stop
+Open in New Tab
+Other
+Pay-as-you-go & low cost
+Performance health
+Performance metrics for the last 24 hours
+Preferences
+Pricing Plans
+Published:
+Quick Range
+Quick Start
+Quota Distribution
+Realtime Usage
+Recommended
+Refresh
+Request Count
+Requests
+Requests per minute
+Reset
+Runway
+Save Preferences
+Select default chart
+Select default range
+Select end time
+Select start time
+Select time granularity
+Smart Route
+Start Time
+Statistical count
+Statistical quota
+Statistical tokens
+Subscribe
+Success rate
+System status
+Test Latency
+Testing...
+Throughput
+Time Granularity
+Tokens per minute
+Tokens used
+Top Up
+Top Users
+Top models by traffic
+Total Count
+Total Quota
+Total Tokens
+Total consumed
+Total consumed quota
+Total requests made
+Total:
+Tracking soon
+Transparent, pay by usage
+Unified multi-model access
+Uptime
+Usage at a glance
+User Consumption Ranking
+User Consumption Trend
+Username
+View API Docs
+View all models
+View all plans
+Wallet
+days
+ms
