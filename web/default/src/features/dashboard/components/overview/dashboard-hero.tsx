@@ -62,25 +62,28 @@ export function DashboardHero() {
     <section
       aria-label={t('Dashboard hero')}
       className={cn(
-        'relative isolate overflow-hidden rounded-3xl',
+        'relative isolate',
         'border border-white/40 dark:border-white/10',
+        'rounded-3xl',
         'shadow-[var(--shadow-soft)]'
       )}
     >
-      {/* Background layers */}
-      <div
-        aria-hidden
-        className='absolute inset-0 -z-20 hero-gradient'
-      />
-      <div
-        aria-hidden
-        className='absolute inset-0 -z-10 bg-cover bg-center opacity-90 dark:opacity-70'
-        style={{ backgroundImage: `url(${heroBackground})` }}
-      />
-      <div
-        aria-hidden
-        className='absolute inset-0 -z-10 bg-linear-to-r from-background/55 via-background/20 to-transparent dark:from-background/70 dark:via-background/30'
-      />
+      {/* Background layers — clipped to rounded corners */}
+      <div className='absolute inset-0 -z-20 overflow-hidden rounded-3xl'>
+        <div
+          aria-hidden
+          className='absolute inset-0 hero-gradient'
+        />
+        <div
+          aria-hidden
+          className='absolute inset-0 bg-cover bg-center opacity-90 dark:opacity-70'
+          style={{ backgroundImage: `url(${heroBackground})` }}
+        />
+        <div
+          aria-hidden
+          className='absolute inset-0 bg-linear-to-r from-background/55 via-background/20 to-transparent dark:from-background/70 dark:via-background/30'
+        />
+      </div>
 
       <div className='relative grid gap-6 px-5 py-6 sm:px-8 sm:py-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-10 lg:py-10'>
         {/* Left: copy + CTA */}
@@ -147,7 +150,7 @@ export function DashboardHero() {
           <img
             src={mascotHero}
             alt={t('Brand mascot')}
-            className='pointer-events-none select-none object-contain drop-shadow-2xl lg:absolute lg:right-0 lg:bottom-0 lg:top-0 lg:my-auto lg:max-h-[26rem]'
+            className='pointer-events-none select-none object-contain drop-shadow-2xl lg:absolute lg:-top-10 lg:right-0 lg:bottom-0 lg:max-h-[30rem]'
             draggable={false}
             loading='eager'
             decoding='async'
