@@ -62,28 +62,25 @@ export function DashboardHero() {
     <section
       aria-label={t('Dashboard hero')}
       className={cn(
-        'relative isolate',
+        'relative isolate overflow-hidden rounded-3xl',
         'border border-white/40 dark:border-white/10',
-        'rounded-3xl',
         'shadow-[var(--shadow-soft)]'
       )}
     >
-      {/* Background layers — clipped to rounded corners */}
-      <div className='absolute inset-0 -z-20 overflow-hidden rounded-3xl'>
-        <div
-          aria-hidden
-          className='absolute inset-0 hero-gradient'
-        />
-        <div
-          aria-hidden
-          className='absolute inset-0 bg-cover bg-center opacity-90 dark:opacity-70'
-          style={{ backgroundImage: `url(${heroBackground})` }}
-        />
-        <div
-          aria-hidden
-          className='absolute inset-0 bg-linear-to-r from-background/55 via-background/20 to-transparent dark:from-background/70 dark:via-background/30'
-        />
-      </div>
+      {/* Background layers */}
+      <div
+        aria-hidden
+        className='absolute inset-0 -z-20 hero-gradient'
+      />
+      <div
+        aria-hidden
+        className='absolute inset-0 -z-10 bg-cover bg-center opacity-90 dark:opacity-70'
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      <div
+        aria-hidden
+        className='absolute inset-0 -z-10 bg-linear-to-r from-background/55 via-background/20 to-transparent dark:from-background/70 dark:via-background/30'
+      />
 
       <div className='relative grid gap-6 px-5 py-6 sm:px-8 sm:py-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-10 lg:py-10'>
         {/* Left: copy + CTA */}
@@ -150,24 +147,11 @@ export function DashboardHero() {
           <img
             src={mascotHero}
             alt={t('Brand mascot')}
-            className='pointer-events-none select-none object-contain drop-shadow-2xl lg:absolute lg:-top-10 lg:right-0 lg:bottom-0 lg:max-h-[30rem]'
+            className='pointer-events-none select-none object-contain drop-shadow-2xl lg:absolute lg:right-0 lg:bottom-0 lg:top-0 lg:my-auto lg:max-h-[26rem]'
             draggable={false}
             loading='eager'
             decoding='async'
           />
-
-          <div className='card-glass absolute right-2 top-2 hidden flex-col items-end gap-0.5 rounded-2xl px-3 py-2 text-right sm:flex'>
-            <div className='inline-flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground'>
-              <Sparkles className='size-3 text-[var(--accent-blue)]' aria-hidden />
-              {brand} · {t('Smart Route')}
-            </div>
-            <div className='text-2xl font-bold tabular-nums text-foreground'>
-              99.9%
-            </div>
-            <div className='text-[10px] text-muted-foreground'>
-              {t('Uptime')}
-            </div>
-          </div>
         </div>
       </div>
     </section>
