@@ -2,6 +2,7 @@
   "\"default\": \"us-central1\", \"claude-3-5-sonnet-20240620\": \"europe-west1\"": "\"default\": \"us-central1\", \"claude-3-5-sonnet-20240620\": \"europe-west1\"",
   "/status/": "/status/",
   "/your/endpoint": "/your/endpoint",
+  "@visactor/vchart": "@visactor/vchart",
   "AI Proxy": "AI Proxy",
   "AIGC2D": "AIGC2D",
   "API URL": "API URL",
