@@ -34,7 +34,7 @@ export function InviteFriendCard() {
     <Link
       to='/profile'
       aria-label={t('Invite Friends')}
-      className='card-glass group-data-[collapsible=icon]:hidden relative block overflow-hidden rounded-xl px-3 py-3 transition hover:shadow-[0_4px_18px_var(--ring-glow)]'
+      className='card-glass group-data-[collapsible=icon]:hidden relative block overflow-visible rounded-xl px-3 py-3 transition hover:shadow-[0_4px_18px_var(--ring-glow)]'
     >
       <div className='relative z-10 max-w-[7.5rem]'>
         <div className='text-sm font-semibold leading-snug'>
@@ -50,7 +50,7 @@ export function InviteFriendCard() {
         src={mascotInvite}
         alt=''
         aria-hidden
-        className='pointer-events-none absolute -bottom-2 -right-2 h-20 w-20 object-contain select-none'
+        className='pointer-events-none absolute -bottom-4 -right-3 h-24 w-24 object-contain select-none drop-shadow-sm'
         draggable={false}
       />
     </Link>

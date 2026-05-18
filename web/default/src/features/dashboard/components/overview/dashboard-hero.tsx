@@ -152,19 +152,6 @@ export function DashboardHero() {
             loading='eager'
             decoding='async'
           />
-
-          <div className='card-glass absolute right-2 top-2 hidden flex-col items-end gap-0.5 rounded-2xl px-3 py-2 text-right sm:flex'>
-            <div className='inline-flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground'>
-              <Sparkles className='size-3 text-[var(--accent-blue)]' aria-hidden />
-              {brand} · {t('Smart Route')}
-            </div>
-            <div className='text-2xl font-bold tabular-nums text-foreground'>
-              99.9%
-            </div>
-            <div className='text-[10px] text-muted-foreground'>
-              {t('Uptime')}
-            </div>
-          </div>
         </div>
       </div>
     </section>
