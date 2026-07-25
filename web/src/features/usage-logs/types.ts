@@ -178,6 +178,7 @@ export interface LogOtherData {
   cache_creation_ratio_1h?: number
   is_model_mapped?: boolean
   upstream_model_name?: string
+  requested_model_alias?: string
   audio_ratio?: number
   audio_completion_ratio?: number
   frt?: number

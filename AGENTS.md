@@ -135,8 +135,6 @@ Do NOT directly import or call `encoding/json` in business code. `json.RawMessag
 - In React components, use `useTranslation()` and call `t('English key')` for user-facing text.
 - Follow `web/AGENTS.md` for detailed frontend conventions, including TypeScript, component structure, styling, accessibility, testing, and build checks.
 
-# 
-
 **Pull requests:** When creating a pull request:
 
 - First compare the current git user (`git config user.name` / `git config user.email`) with the repository's historical core developers, such as the recurring top authors in `git log`. Do not change git config.
